@@ -2,7 +2,7 @@
         <head>
         <title>cmsimde_site</title>
         <meta charset="utf-8">
-<meta property="head" content="H1">
+<meta property="head" content="H2">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
@@ -141,9 +141,25 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content"> <a href='ROS.html'>Next</a> >> ROS<br /><h1>About</h1>
-<p>使用cmsimde來建立網站</p>
-<br /> <a href='ROS.html'>Next</a> >> ROS</div>
+    <div id="tipue_search_content">Course << <a href='Course.html'>Previous</a> <br /><h1>Command</h1>
+<p>以下指令皆由linux作業系統底下執行</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">pwd //顯示路徑</pre>
+<p style="margin: 0in; font-family: 'Microsoft JhengHei'; font-size: 12.0pt;"><a href="https://blog.gtwang.org/linux/linux-ls-command-tutorial/">ls指令</a></p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">ls -la //顯示隱藏檔案、目錄的詳細資訊</pre>
+<p style="margin: 0in; font-family: 'Microsoft JhengHei'; font-size: 12.0pt;">以下指令在ROS作業系統底下執行<br/><br/></p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">rosrun [package] [package_node] //rosrun turtlesim turtlesim_node
+rosrun [package] [package_node] //rosrun turtlesim turtle_teleop_key
+rosnode list 查看目前執行什麼節點
+rosnode info turtlesim
+rostopic list
+rostopic echo /turtle1/pose 回傳現在的位置資訊(x、y、角度、線速度、角速度)
+rostopic pub -1 /turtle1/cmd_vel geometry_msgs/Twist -- '[2.0, 0.0, 0.0]' '[0.0, 0.0, 1.0]'
+rostopic pub /turtle1/cmd_vel geometry_msgs/Twist -r 1 -- '[2.0, 0.0, 0.0]' '[0.0, 0.0, -1.8]'
+// /turtle1/cmd_vel //topic
+// geometry_msgs/Twist //message
+// -r repeat
+// 1 //hz</pre>
+<p style="margin: 0in; font-family: 'Microsoft JhengHei'; font-size: 12.0pt;"><br/><br/></p><br />Course << <a href='Course.html'>Previous</a> </div>
         
     <!-- footer -->
       <div class="container">

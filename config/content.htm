@@ -10,3 +10,25 @@
 <p style="margin: 0in; font-family: 'Microsoft JhengHei'; font-size: 12.0pt;"> </p>
 <p style="margin: 0in; font-family: 'Microsoft JhengHei'; font-size: 12.0pt;"><span lang="en-US">SLAM</span><span lang="zh-TW">是Simultaneous localization and mapping的縮寫，意思為同步定位與建圖。</span></p>
 <p style="margin: 0in; font-family: 'Microsoft JhengHei'; font-size: 12.0pt;">主要用於解決機器人在未知環境運動時的定位與地圖構建問題。</p>
+<p style="margin: 0in; font-family: 'Microsoft JhengHei'; font-size: 12.0pt;"></p>
+<h2>Course</h2>
+<p style="margin: 0in; font-family: 'Microsoft JhengHei'; font-size: 12.0pt;"></p>
+<h2>Command</h2>
+<p>以下指令皆由linux作業系統底下執行</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">pwd //顯示路徑</pre>
+<p style="margin: 0in; font-family: 'Microsoft JhengHei'; font-size: 12.0pt;"><a href="https://blog.gtwang.org/linux/linux-ls-command-tutorial/">ls指令</a></p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">ls -la //顯示隱藏檔案、目錄的詳細資訊</pre>
+<p style="margin: 0in; font-family: 'Microsoft JhengHei'; font-size: 12.0pt;">以下指令在ROS作業系統底下執行<br/><br/></p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">rosrun [package] [package_node] //rosrun turtlesim turtlesim_node
+rosrun [package] [package_node] //rosrun turtlesim turtle_teleop_key
+rosnode list 查看目前執行什麼節點
+rosnode info turtlesim
+rostopic list
+rostopic echo /turtle1/pose 回傳現在的位置資訊(x、y、角度、線速度、角速度)
+rostopic pub -1 /turtle1/cmd_vel geometry_msgs/Twist -- '[2.0, 0.0, 0.0]' '[0.0, 0.0, 1.0]'
+rostopic pub /turtle1/cmd_vel geometry_msgs/Twist -r 1 -- '[2.0, 0.0, 0.0]' '[0.0, 0.0, -1.8]'
+// /turtle1/cmd_vel //topic
+// geometry_msgs/Twist //message
+// -r repeat
+// 1 //hz</pre>
+<p style="margin: 0in; font-family: 'Microsoft JhengHei'; font-size: 12.0pt;"><br/><br/></p>

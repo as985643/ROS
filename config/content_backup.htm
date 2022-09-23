@@ -1,2 +1,34 @@
 <h1>About</h1>
-<p>cmsimde_site</p>
+<p>使用cmsimde來建立網站</p>
+<h1>ROS</h1>
+<p style="margin: 0in; font-family: 'Microsoft JhengHei'; font-size: 12.0pt;"><a href="https://zh.wikipedia.org/zh-tw/%E6%A9%9F%E5%99%A8%E4%BA%BA%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1"><span lang="en-US">ROS</span></a><span lang="en-US"> (</span><span lang="zh-TW">Robot Operating System</span><span lang="en-US">) </span><span lang="zh-TW">專門為機器人軟體開發的一套電腦作業系統架構，</span></p>
+<p style="margin: 0in; font-family: 'Microsoft JhengHei'; font-size: 12.0pt;"><span lang="zh-TW">使用</span><a href="https://zh.wikipedia.org/zh-tw/%E5%B0%8D%E7%AD%89%E7%B6%B2%E8%B7%AF"><span lang="en-US">P2P</span></a><span lang="en-US">(</span><span lang="zh-TW">peer-to-peer</span><span lang="en-US">)</span><span lang="zh-TW">又稱為對等技術，是去中心化、依靠使用者群</span><span lang="en-US">(peers)</span><span lang="zh-TW">交換資</span></p>
+<p style="margin: 0in; font-family: 'Microsoft JhengHei'; font-size: 12.0pt;">訊的網際網路體系，可降低以往網路傳輸中的節點，降低資料遺失的風險。</p>
+<p style="margin: 0in; font-family: 'Microsoft JhengHei'; font-size: 12.0pt;"> </p>
+<p style="margin: 0in; font-family: 'Microsoft JhengHei'; font-size: 12.0pt;"><span lang="en-US">ROS</span><span lang="zh-TW">的主要設計目標在於機器人研發領域提高代碼復用率。</span><span lang="en-US">ROS</span><span lang="zh-TW">是一種分布是處理框</span></p>
+<p style="margin: 0in; font-family: 'Microsoft JhengHei'; font-size: 12.0pt;"><span lang="zh-TW">架，又稱</span><span lang="en-US">Nodes</span><span lang="zh-TW">。</span></p>
+<p style="margin: 0in; font-family: 'Microsoft JhengHei'; font-size: 12.0pt;"> </p>
+<p style="margin: 0in; font-family: 'Microsoft JhengHei'; font-size: 12.0pt;"><span lang="en-US">SLAM</span><span lang="zh-TW">是Simultaneous localization and mapping的縮寫，意思為同步定位與建圖。</span></p>
+<p style="margin: 0in; font-family: 'Microsoft JhengHei'; font-size: 12.0pt;">主要用於解決機器人在未知環境運動時的定位與地圖構建問題。</p>
+<p style="margin: 0in; font-family: 'Microsoft JhengHei'; font-size: 12.0pt;"></p>
+<h2>Course</h2>
+<p style="margin: 0in; font-family: 'Microsoft JhengHei'; font-size: 12.0pt;"></p>
+<h2>指令</h2>
+<p>以下指令皆由linux作業系統底下執行</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">pwd //顯示路徑</pre>
+<p style="margin: 0in; font-family: 'Microsoft JhengHei'; font-size: 12.0pt;"><a href="https://blog.gtwang.org/linux/linux-ls-command-tutorial/">ls指令</a></p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">ls -la //顯示隱藏檔案、目錄的詳細資訊</pre>
+<p style="margin: 0in; font-family: 'Microsoft JhengHei'; font-size: 12.0pt;">以下指令在ROS作業系統底下執行<br/><br/></p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">rosrun [package] [package_node] //rosrun turtlesim turtlesim_node
+rosrun [package] [package_node] //rosrun turtlesim turtle_teleop_key
+rosnode list 查看目前執行什麼節點
+rosnode info turtlesim
+rostopic list
+rostopic echo /turtle1/pose 回傳現在的位置資訊(x、y、角度、線速度、角速度)
+rostopic pub -1 /turtle1/cmd_vel geometry_msgs/Twist -- '[2.0, 0.0, 0.0]' '[0.0, 0.0, 1.0]'
+rostopic pub /turtle1/cmd_vel geometry_msgs/Twist -r 1 -- '[2.0, 0.0, 0.0]' '[0.0, 0.0, -1.8]'
+// /turtle1/cmd_vel //topic
+// geometry_msgs/Twist //message
+// -r repeat
+// 1 //hz</pre>
+<p style="margin: 0in; font-family: 'Microsoft JhengHei'; font-size: 12.0pt;"><br/><br/></p>
